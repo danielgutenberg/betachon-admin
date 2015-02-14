@@ -1,0 +1,95 @@
+<p id="mainContent"></p>
+    <div class="title">
+        <h3>Clients (103)</h3>
+    </div>
+<p>
+
+
+
+
+
+</p><form action="/admin/index/filterqry/" class="filterqry">
+  <input type="hidden" name="qryName" value="clientLst">
+  <p id="toggleShowFilterSection" style="display:;">Click to show filters</p>
+  <p id="toggleHideFilterSection" style="display:none;">Click to hide filters</p>
+  <div id="filterSection" style="display:none;">
+  <table class="biggestTbl">
+    <tbody>
+      <tr>
+  <th valign="top">Name</th>
+  <td colspan="2" valign="top">
+    <input type="hidden" name="filter[client_name][op]" value="start">
+    <input name="filter[client_name][val]" type="text" size="25" value="">
+  </td>
+  <th valign="top">Account Number</th>
+  <td colspan="2" valign="top">
+    <input type="hidden" name="filter[client_account_number][op]" value="start">
+    <input name="filter[client_account_number][val]" type="text" size="25" value="">
+	</td>
+</tr>
+<tr>
+  <th valign="top">Size</th>
+  <td colspan="2" valign="top">
+    <input type="hidden" name="filter[client_size][op]" value="in">
+    <select name="filter[client_size][val][]" id="client_size_select">
+      <option value="@ALL">All</option>
+              <option value="Big">Big</option>
+              <option value="Medium">Medium</option>
+              <option value="Small">Small</option>
+          </select>
+  </td>
+  <th valign="top">Client Type</th>
+  <td colspan="2" valign="top">
+    <input type="hidden" name="filter[client_zip_ref][val]" value="">
+    <select name="filter[client_zip_ref][op]" id="client_zip_ref">
+      <option value="" selected="">All</option>
+      <option value="eq">Express</option>
+      <option value="noteq">Express/Ground</option>
+    </select>
+  </td>
+</tr>      <tr>
+        <td colspan="12" align="left" valign="top" style="font-size:12px;padding-top:5px;color:#666;">
+        <input type="submit" name="Submit2" value="Apply Filter">
+        <input type="button" name="Submit3" value="Clear Filter" onclick="document.location='/admin/index/filterqry?qryName=clientLst'"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+<p></p>
+    
+      <h3><a class="addEntry" href="/admin/client/createclient" onclick="popup_insert_ajax(this);return false;">Create Client</a></h3>
+
+<div id="mainTbl">
+<br>
+<table border="0" cellpadding="0" cellspacing="0" class="moduleTable"> 
+  <tr class="labels">
+    <th><a>Name</a></th>
+    <th>Account Number</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Created</th>
+    <th>Address Line 1</th>
+    <th>Address Line 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>County</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Client Type</th>
+    <th>Size</th>
+    <th>Active</th>
+    <th>Edit</th>
+    <th>Stats</th>
+    <th>Auditor 2</th>
+    <th>Late</th>
+    <th>On Time</th>
+    <th>Upload</th>
+  
+      </tr>
+<tbody>
+</tbody>
+</table>
+</div><div id="floating-scrollbar" style="display: block; position: fixed; bottom: 0px; height: 250px; overflow-x: auto; overflow-y: scroll; left: 26px; width: 1611px;"><div style="border: 1px solid rgb(255, 255, 255); opacity: 0.01; width: 1951px;"></div></div>
+
+<br>

@@ -1,0 +1,13 @@
+{
+    "require": {
+        "slim/slim": ">=2.0.0",
+        "tuupola/slim-basic-auth": "0.8.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Twig_Extensions_": "Views/Extension/",
+            "Slim\\Extras": "."
+        }
+    },
+    "target-dir": "Slim/Extras"
+}

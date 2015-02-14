@@ -1,0 +1,525 @@
+<div class="mainContent">
+	
+	
+<p id="mainContent">  <div class="title">
+    <h3>Invoices</h3>
+  </div>
+
+      </p><p></p><form id="csvFrm" action="?export=1" target="_blank" method="post" style="margin:0;padding:0;">
+	<div style="float:right;">         
+	 <button type="submit" value="yes" name="process" class="createNew" style="margin-bottom: 10px">Export</button>
+	</div>
+</form>
+
+
+
+  <style>  
+    button.createNew {
+        font:bold 18px lucida sans,lucida sans unicode,lucida grande,sans-serif;
+    padding:8px 15px;
+    background:#705B02;
+    color:white;
+      -moz-border-radius: 10px;
+      border-radius: 10px;   
+      border:solid 3px #F3E1B4; 
+      text-transform:uppercase; 
+    }
+  </style>
+<p></p>
+  	
+      <p>
+<script>
+$(document).ready(function(){
+  $('#toggleShowFilterSection').click(function() {
+    $('#filterSection').slideToggle('slow');
+    $('#toggleShowFilterSection').hide();
+    $('#toggleHideFilterSection').show();
+  });
+
+  $('#toggleHideFilterSection').click(function() {
+    $('#filterSection').slideToggle('slow');
+    $('#toggleHideFilterSection').hide();
+    $('#toggleShowFilterSection').show();
+  });
+  
+});
+</script>
+
+<style>
+
+</style>
+
+
+</p><form class="filterqry">
+  <input type="hidden" name="qryName" value="invoiceLstA">
+  <p id="toggleShowFilterSection" style="display: none;">Click to show filters</p>
+  <p id="toggleHideFilterSection" style="">Click to hide filters</p>
+  <div id="filterSection" style="display: block;">
+    <table class="biggestTbl">
+    <tbody>
+      	<tr>
+	  <th valign="top">Client</th>
+	  <td colspan="2" valign="top">
+	    <input type="hidden" name="filter[account_number][op]" value="in">
+	    <select name="filter[account_number][val][]" id="account_number_select">
+	      <option value="@ALL">All</option>
+	      	        <option value=""></option>
+	      	        <option value=""></option>
+	      	        <option value="227002824">888 digital</option>
+	      	        <option value="014202013">Aero Instruments</option>
+	      	        <option value="210691316">Aeroturbine</option>
+	      	        <option value="349395240">Aeroturbine</option>
+	      	        <option value="582231788">Aeroturbine</option>
+	      	        <option value="212601195">AH Lighting</option>
+	      	        <option value="007104863">AK Stamping</option>
+	      	        <option value="277709686">Amby</option>
+	      	        <option value="119746698">American Houseware</option>
+	      	        <option value="312753901">ANB Components</option>
+	      	        <option value="">Apple Digital</option>
+	      	        <option value="118441834">Apsco</option>
+	      	        <option value="475066243">Aquastone</option>
+	      	        <option value="267316481">ATN</option>
+	      	        <option value="357738520">AVF</option>
+	      	        <option value="202949665">AVG</option>
+	      	        <option value="178697331">Bay Sales</option>
+	      	        <option value="104167659">Belleville Wire</option>
+	      	        <option value="472058967">Biad Chile</option>
+	      	        <option value="060502137">BirdX</option>
+	      	        <option value="244780792 ">blinc inc</option>
+	      	        <option value="365174164">blinc inc</option>
+	      	        <option value="304343036">Bug in a Rug</option>
+	      	        <option value="134852550 ">Bug in a Rug</option>
+	      	        <option value="">Campco</option>
+	      	        <option value="465033061">Click Go</option>
+	      	        <option value="363327923">Cohen</option>
+	      	        <option value="485160345">Colored Organics</option>
+	      	        <option value="171780420">Columbian</option>
+	      	        <option value="461145728">Company C</option>
+	      	        <option value="113501146">Company C</option>
+	      	        <option value="164960137">Company C</option>
+	      	        <option value="366986189">Company C</option>
+	      	        <option value="401590960">Company C</option>
+	      	        <option value="366768580">Company C</option>
+	      	        <option value="192043514">Cotel Industries</option>
+	      	        <option value="100097818">Dillon</option>
+	      	        <option value="296678180">Dillon Aero</option>
+	      	        <option value="213791214">DKE</option>
+	      	        <option value="264806909">Downtown</option>
+	      	        <option value="124025842">DUSSAUD ADVERTISING</option>
+	      	        <option value="384481574">Ecoflex Furniture</option>
+	      	        <option value="329732134">EEI</option>
+	      	        <option value="178722450">EEI</option>
+	      	        <option value="544299387">EEI</option>
+	      	        <option value="354283638">EEI</option>
+	      	        <option value="481434840">EEI 2</option>
+	      	        <option value="272936960">Exclusive Merchandise</option>
+	      	        <option value="309650506">Go Parts</option>
+	      	        <option value="457604564">GreenSmoke</option>
+	      	        <option value="469554546">Gun Storage</option>
+	      	        <option value="1031-35184">Harmony</option>
+	      	        <option value="352851965">Home and Living</option>
+	      	        <option value="343658508">Horizon</option>
+	      	        <option value="344424586">Horizon</option>
+	      	        <option value="048500412">Hougen</option>
+	      	        <option value="240121522">Idea Village</option>
+	      	        <option value="245776578">Idea Village2</option>
+	      	        <option value="245776578">Ideavillage.com</option>
+	      	        <option value="104763820">Import Collections</option>
+	      	        <option value="353667980">Joovy</option>
+	      	        <option value="354199840">Joovy (california)</option>
+	      	        <option value="319255109">Joovy (texas)</option>
+	      	        <option value="239397735">Lip Ink</option>
+	      	        <option value="002134594">Lock Inspection</option>
+	      	        <option value="190586715">Logical</option>
+	      	        <option value="125831702">MHP</option>
+	      	        <option value="528249663">MHP</option>
+	      	        <option value="125151264">Mito</option>
+	      	        <option value="336474248">MML Logistics</option>
+	      	        <option value="480184106">Morphe Brushes</option>
+	      	        <option value="371658475">Mothers Lounge</option>
+	      	        <option value="355494764">Nature Creation</option>
+	      	        <option value="408573203">Omerica</option>
+	      	        <option value="349209217">Pyramyd 2</option>
+	      	        <option value="239031900">Pyramyd Air</option>
+	      	        <option value="106916713">Race Engineering</option>
+	      	        <option value="172235859">RF IMAGE </option>
+	      	        <option value="124025842">Rolex - Dussaud</option>
+	      	        <option value="218673651">Rolex - RUSA Decor</option>
+	      	        <option value="132836264">Rolex - RWSC</option>
+	      	        <option value="111421676">Rolex (dallas)</option>
+	      	        <option value="010051487">Rolex (NY)</option>
+	      	        <option value="132836264  ">RUSA INC</option>
+	      	        <option value="332218727">S2E,Inc</option>
+	      	        <option value="175342214">Seasonal</option>
+	      	        <option value="103135184">Shop Harmony</option>
+	      	        <option value="373818585">Skydevices</option>
+	      	        <option value="323313881">Skywire Communications, Inc.</option>
+	      	        <option value="282998904">Sportek</option>
+	      	        <option value="373648906">Streamline Distributors</option>
+	      	        <option value="368596701">Swizz Style</option>
+	      	        <option value="253413611">The Bumble Collection</option>
+	      	        <option value="185257711">Thing Fling</option>
+	      	        <option value="118769724">TSMGI</option>
+	      	        <option value="412536444">Ulubulu</option>
+	      	        <option value="334178196">USA Supply Source</option>
+	      	        <option value="221780418">Vermont Castings AKA (Monessen Hearth)</option>
+	      	        <option value="423906243">West Coast Jewelers</option>
+	      	        <option value="124941695">Woofers</option>
+	      	        <option value="316759653">Yossi Samry</option>
+	      	        <option value="319807837">Yossi Samry</option>
+	      	    </select>
+	  </td>
+	</tr>
+
+<tr>
+  <th valign="top">Invoice Number</th>
+  <td colspan="1" valign="top">
+    <input type="hidden" name="filter[invoice_number][op]" value="start">
+    <input name="filter[invoice_number][val]" type="text" size="25" value="">
+  </td>
+  <th valign="top">Tracking Number</th>
+  <td colspan="1" valign="top">
+    <input type="hidden" name="filter[tracking_number][op]" value="start">
+    <input name="filter[tracking_number][val]" type="text" size="25" value="">
+  </td>
+	
+  <th valign="top">Original Amount</th>
+  <td colspan="1" valign="top">
+    <input type="hidden" name="filter[original_amount_due][op]" value="start">
+    <input name="filter[original_amount_due][val]" type="text" size="25" value="">
+  </td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+
+<tr>
+	
+	
+  <th valign="top">Invoice Date
+	  
+	    <select style="display:block;margin-top:10px;" name="filter[invoice_date][op]" id="date_operator" onchange="changeDateOp(this);">
+	      <option value="">all</option>
+	      <option value="lteq">is on or before</option>
+	      <option value="gteq">is on or after</option>
+	      <option value="eq">is on</option>
+	      <option value="bw">is between</option>
+	    </select>&nbsp;<br>
+	  
+	  
+	  <div id="date1_th" style="display: none;">
+	    <input type="text" id="datepicker" value="" class="hasDatepicker"><img class="ui-datepicker-trigger" src="/CMS/img/calendar.gif" alt="..." title="...">
+	    &nbsp;<input name="filter[invoice_date][val]" type="hidden" id="datepicker_alternate" value="">
+	  </div>
+	    
+	  <div id="date2_th" style="display: none;">
+	    <div style="margin:5px 0;padding:0;">...thru...</div>
+	    <div class="demo">
+		    <input type="text" id="datepicker2" value="" class="hasDatepicker"><img class="ui-datepicker-trigger" src="/CMS/img/calendar.gif" alt="..." title="...">&nbsp;
+		    <input name="filter[invoice_date][val2]" type="hidden" id="datepicker_alternate2" value="">
+	    </div>
+	  </div>
+  </th>
+
+
+  <th valign="top">Region
+    <br>
+    <input type="hidden" name="filter[region][op]" value="in">
+    <select size="4" class="multiSelect" multiple="multiple" name="filter[region][val][]" id="region_select">
+      <option value="@ALL">All</option>
+              <option value="US">US</option>
+              <option value="Alaska Inbound">Alaska Inbound</option>
+              <option value="Hawaii Inbound">Hawaii Inbound</option>
+          </select>
+		
+    <br><br>
+    Type
+    <br>
+    <input type="hidden" name="filter[type][op]" value="in">
+    <select size="6" class="multiSelect" multiple="multiple" name="filter[type][val][]" id="type_select">
+      <option value="@ALL">All</option>
+              <option value="Same-Day">Same-Day</option>
+              <option value="Monday-Friday">Monday-Friday</option>
+              <option value="Saturday">Saturday</option>
+            <option value="Ground Delivery">Ground Delivery</option>
+      <option value="International">International</option>
+    </select> 
+  </th>
+
+  <th valign="top">Service
+    <br>
+    <input type="hidden" name="filter[service][op]" value="in">
+    <select size="9" class="multiSelect" multiple="multiple" name="filter[service][val][]" id="service_select">
+      <option value="@ALL">All</option>
+              <option value="FedEx SameDay">FedEx SameDay</option>
+              <option value="FedEx First Overnight">FedEx First Overnight</option>
+              <option value="FedEx Priority Overnight">FedEx Priority Overnight</option>
+              <option value="FedEx Standard Overnight">FedEx Standard Overnight</option>
+              <option value="FedEx 2Day A.M.">FedEx 2Day A.M.</option>
+              <option value="FedEx 2Day">FedEx 2Day</option>
+              <option value="FedEx Express Saver">FedEx Express Saver</option>
+            <option value="Ground">Ground</option>
+    </select>
+  </th>
+  <th rowspan="8" valign="top">Area
+    <br>
+    <input type="hidden" name="filter[area][op]" value="in">
+    <select size="12" class="multiSelect" multiple="multiple" name="filter[area][val][]" id="area_select">
+      <option value="@ALL">All</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="AA">AA</option>
+              <option value="A3">A3</option>
+              <option value="A4">A4</option>
+              <option value="A5">A5</option>
+              <option value="A6">A6</option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+              <option value="RM">RM</option>
+              <option value="AT">AT</option>
+          </select>
+  </th>
+
+  <th valign="top">Residential
+    <br>
+    <input type="hidden" name="filter[residential][op]" value="in">
+    <select size="3" class="multiSelect" multiple="multiple" name="filter[residential][val][]" id="residential_select">
+      <option value="@ALL">All</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+          </select>
+    <br><br>
+    Refund
+    <br>
+    <input type="hidden" name="filter[refund][op]" value="in">
+    <select size="5" class="multiSelect" multiple="multiple" name="filter[refund][val][]" id="refund_select">
+      <option value="@ALL">All</option>
+      			            <option value=""></option>
+					
+      			            <option value="Received">Received</option>
+					
+      			            <option value="Submitted">Submitted</option>
+					
+      			            <option value="Rejected">Rejected</option>
+					
+          </select>
+    <br><br>
+  </th>
+			<th valign="top">Auditor 2
+    <br>
+    <input type="hidden" name="filter[auditor2][op]" value="in">
+    <select size="3" class="multiSelect" multiple="multiple" name="filter[auditor2][val][]" id="auditor2_select">
+      <option value="@ALL">All</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+          </select>
+		
+  </th>
+
+
+</tr>
+
+	
+
+<script>
+  var date1 = "";
+  var date2 = "";
+  var date_operator = "";
+
+$(document).ready(function() {
+  
+  $("#datepicker" ).datepicker({
+        altField: "#datepicker_alternate",
+        altFormat: "yy-mm-dd",
+        dateFormat: 'M d, yy',
+        buttonImage: "/CMS/img/calendar.gif",
+        buttonImageOnly: true,
+        changeMonth: true,
+        changeYear: true,
+        showOn: 'both'
+  });
+  $( "#datepicker2" ).datepicker({
+        altField: "#datepicker_alternate2",
+        altFormat: "yy-mm-dd",
+        dateFormat: 'M d, yy',
+        buttonImage: "/CMS/img/calendar.gif",
+        buttonImageOnly: true,
+        changeMonth: true,
+        changeYear: true,
+        showOn: 'both'        
+  });
+  if(date1!='') {
+      $("#datepicker" ).datepicker( "setDate" , date1 );
+  }
+  if(date2!='') {
+      $("#datepicker2" ).datepicker( "setDate" , date2 );
+      
+  }
+
+  $('#date_operator').val(date_operator);
+  if(date_operator=='bw'){
+    $('#date2_th').show();
+  }else if(date_operator==''){
+    $('#date2_th').hide();
+    $('#date1_th').hide();
+  } 
+  
+  
+});
+
+function changeDateOp(selObj) {
+  if(selObj.value=='') {
+    $('#date1_th').hide();
+    $('#date2_th').hide();
+    $('#datepicker_alternate').val('');   
+    $('#datepicker_alternate2').val('');    
+  } else if(selObj.value=='bw') {
+    $('#date1_th').show();
+    $('#date2_th').show();
+  } else {
+    $('#date1_th').show();
+    $('#date2_th').hide();
+  } 
+}
+
+</script> 
+
+
+      <tr>
+        <td colspan="12" align="left" valign="top" style="font-size:12px;padding-top:5px;color:#666;">
+               
+        <input type="submit" name="Submit2" value="Apply Filter">
+        <input type="button" name="Submit3" value="Clear Filter" onclick="document.location='/admin/index/filterqry?qryName=invoiceLstA'"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+<p></p>
+    
+    
+    
+
+
+
+
+
+<div id="mainTbl">
+    <br>
+
+<table border="0" cellpadding="0" cellspacing="0" class="moduleTable">
+   <tbody>
+  <tr class="labels">
+    <th>        <a>
+        Client Name  
+                </a>
+        </th>
+    <th>        <a>
+        Client Contact  
+                </a>
+        </th>
+    <th>        <a>
+        Account Number  
+                </a>
+        </th>
+    <th>        <a>
+        Days Left  
+                </a>
+        </th>
+    <th>        <a>
+        Invoice Date
+                          </a>
+        </th>
+    <th>        <a>
+        Invoice Number  
+                </a>
+        </th>
+    <th>        <a>
+        Net Charge Amount  
+                </a>
+        </th>
+    <th>        <a>
+        Invoice Amount  
+                </a>
+        </th>
+    <th>        <a>
+        Tracking Prefix  
+                </a>
+        </th>
+    <th>        <a>
+        Tracking Number  
+                </a>
+        </th>
+    <th>        <a>
+        Region  
+                </a>
+        </th>
+    <th>        <a>
+        Type  
+                </a>
+        </th>
+    <th>        <a>
+        Service  
+                </a>
+        </th>
+    <th>        <a>
+        Area  
+                </a>
+        </th>
+    <th>        <a>
+        Origin Zip  
+                </a>
+        </th>
+    <th>        <a>
+        Zip  
+                </a>
+        </th>
+    <th>        <a>
+        Shipment Date  
+                </a>
+        </th>
+    <th>        <a>
+        Delivery Date  
+                </a>
+        </th>
+    <th>        <a>
+        Delivery Time  
+                </a>
+        </th>
+    <th>        <a>
+        Residential  
+                </a>
+        </th>
+    <th>        <a>
+        Late  
+                </a>
+        </th>
+    <th>        <a>
+        Really  
+                </a>
+        </th>
+    <th>        <a>
+        Refund  
+                </a>
+        </th>
+    <th>        <a>
+        Auditor 2  
+                </a>
+        </th>
+    <th>        Edit        </th>
+  
+      </tr>
+   
+  
+
+  </tbody>
+</table>
+
+</div><div id="floating-scrollbar" style="position: fixed; bottom: 0px; height: 30px; overflow-x: auto; overflow-y: hidden; left: 26px; width: 1611px; display: none;"><div style="border: 1px solid rgb(255, 255, 255); opacity: 0.01; width: 1927px;"></div></div>
+
+
+<br>
+
+
+
+
+
+
